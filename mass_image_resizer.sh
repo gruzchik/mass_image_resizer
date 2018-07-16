@@ -11,7 +11,7 @@ FEXT='JPG' # file extention
 if [ ! -z ${SOURCE_FOLDER} ] && [ -d ${SOURCE_FOLDER} ]; then
 	cd ${SOURCE_FOLDER}
 	mkdir -p ${SOURCE_FOLDER}/resized_photos
-	ls ./ | grep ${JPG} | while read line; do convert -resize 60% ${line} resized_photos/${line}; done
+	ls ./ | grep ${FEXT} | while read line; do convert -resize 60% ${line} resized_photos/${line}; done
 	# chown -R user:user ${SOURCE_FOLDER}/resized_photos
 else
 	echo 'Please specify DIRECTORY with images for resize'
